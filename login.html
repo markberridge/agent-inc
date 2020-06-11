@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function focus() { document.getElementById("myInput").focus(); }
+function f() {
+  return "knock knock" == document.getElementById("myInput").value;
+}
+function g() {
+  if(f()) document.getElementById("form").submit();
+}
+</script>
+</head>
+<body onload="focus()">
+<h1><a href="index.html">Agent Inc.</a></h1>
+<form id="form" action="who.html" method="get" onSubmit="return f()" onKeyUp="g()">
+<input id="myInput"></input>
+</form>
+</body>
