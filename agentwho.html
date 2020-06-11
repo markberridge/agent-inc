@@ -17,9 +17,22 @@
           .focus();
       }
       function f() {
-        return "Agent K" == document
+        var who = document
           .getElementById("myInput")
           .value;
+        if (who === "Agent K") {
+          document
+            .getElementById("form")
+            .action = "agent-k.html";
+          return true;
+        }
+        if (who === "Agent S") {
+          document
+            .getElementById("form")
+            .action = "agent-s.html";
+          return true;
+        }
+        return false;
       }
       function g() {
         if (f()) 
@@ -34,7 +47,7 @@
       <h1>
         <a href="index.html">Agent Inc.</a>
       </h1>
-      <form id="form" action="agent-k.html" method="get" onSubmit="return f()" onKeyUp="g()">
+      <form id="form" action="#" method="get" onSubmit="return f()" onKeyUp="g()">
         <label for="myInput">An agent who?</label>
         <input id="myInput"></input>
       </form>
